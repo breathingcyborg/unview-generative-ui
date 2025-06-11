@@ -8,7 +8,8 @@ export function getUiGeneratorPrompt(componentsPrompt: string, hooksPrompt: stri
 4. DO NOT show placeholder UI or loading states.
 5. ALL variables/functions inside <mdx> MUST be exported.
 6. DO NOT report your progress or plan
-7. MUST have ONE default export component per <mdx> block.
+7. All variables/functions/components MUST be inside <mdx> only
+8. MUST have ONE default export component per <mdx> block.
 
 # Workflow
 
