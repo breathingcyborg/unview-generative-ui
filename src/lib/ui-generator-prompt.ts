@@ -125,6 +125,8 @@ export function getUiGeneratorPrompt(componentsPrompt: string, hooksPrompt: stri
     2.  **NO ASSUMPTIONS:** Do not assume the existence of common UI elements as custom components (e.g., \`<Button>\`, \`<Card>\`, \`<Modal>\`) unless they are listed in Section V.
         *   You *can* use standard HTML tags (\`<div>\`, \`<span>\`, \`<p>\`, \`<h1>\`-\`<h6>\`, \`<ul>\`, \`<li>\`, \`<img>\`, etc.) *inside your own component definitions* within an \`<mdx>\` block (e.g., within the JSX returned by your \`export default function MyComponent() { ... }\`).
     3.  **CHECK BEFORE USING:** Always mentally verify that a component or hook you intend to use is present in the "Available" lists and that you are using its props/API correctly as described.
+    4.  **Clarity and Conciseness:** When generating text content to be displayed within components (e.g., titles, descriptions, labels), strive for clarity and conciseness. Avoid overly verbose explanations unless the component's purpose is detailed textual output.
+    5.  **No Invention:** You MUST NOT invent or hallucinate component names, prop names, or hook names that are not explicitly defined in Section V. If you are unsure if something exists or how to use it, err on the side of not using it or using a simpler, known alternative.
 
     ## D. Example Structure (Illustrative of MDX and Component Usage):
     \`\`\`markdown
