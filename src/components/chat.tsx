@@ -8,6 +8,8 @@ import { ToolCall } from "./tool-call";
 import { Input } from "./ui/input";
 import { UIMessage } from "ai";
 import { Card } from "./ui/card";
+import { Intro } from "./intro";
+import { cn } from "@/lib/utils";
 
 export function Chat() {
 
@@ -17,16 +19,26 @@ export function Chat() {
     input,
     handleInputChange,
     handleSubmit,
+    append
   } = useChat({
     api: '/api/generative-dashboard',
     body: {
       ...getCustomComponentsPrompt(registryContext),
     }
   });
+  
+  const isEmpty = messages.length <= 0;
+
+  const onSelectPrompt = (prompt: string) => {
+    append({ role: 'user', content: prompt } );
+  }
 
   return (
-    <div className="chat-container mx-auto">
-      <div className="flex flex-col py-24 stretch">
+    <div className="chat-container mx-auto min-h-screen">
+      {
+        isEmpty && <Intro onSelectPrompt={onSelectPrompt}/>
+      }
+      <div className={cn("flex flex-col stretch", { "py-24": !isEmpty })}>
         {messages.map(message => (
           <div key={message.id} className="whitespace-pre-wrap">
             <MessageContainer message={message}>

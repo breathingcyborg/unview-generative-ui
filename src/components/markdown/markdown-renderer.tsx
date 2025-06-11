@@ -3,7 +3,6 @@ import { MDXProvider } from "@mdx-js/react";
 import { useRegistryContext } from "@/components/generative/registry";
 import { useMemo } from "react";
 import { PlainMarkdownSection } from "./plain-markdown-section";
-import { MDXLoading } from "../mdx-loading";
 import { LoadingCard } from "../loading-card";
 
 /**
