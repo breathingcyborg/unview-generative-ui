@@ -9,7 +9,7 @@ import {
 } from 'ai';
 
 // 10 minutes in seconds
-export const maxDuration = 10 * 60;
+export const maxDuration = 600;
 
 export async function POST(req: Request) {
 

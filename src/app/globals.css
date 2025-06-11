@@ -1,6 +1,48 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* 
+Always include all classes related to spacing and layout.
+Because llm generated ui could use these.
+*/
+
+/* Display and layout */
+@source inline("{sm:,md:,lg:,xl:,2xl:,}{block,inline-block,inline,flex,inline-flex,grid,hidden}"); 
+@source inline("{sm:,md:,lg:,xl:,2xl:,}flex-{row,row-reverse,col,col-reverse}");
+@source inline("{sm:,md:,lg:,xl:,2xl:,}flex-{wrap,wrap-reverse,nowrap}");
+@source inline("{sm:,md:,lg:,xl:,2xl:,}items-{start,center,end,baseline,stretch}");
+@source inline("{sm:,md:,lg:,xl:,2xl:,}justify-{start,center,end,between,around,evenly}");
+
+/* Spacing */
+@source inline("{sm:,md:,lg:,xl:,2xl:,}gap-{0..20}");
+@source inline("{sm:,md:,lg:,xl:,2xl:,}space-x-{0..10}");
+@source inline("{sm:,md:,lg:,xl:,2xl:,}space-y-{0..10}");
+@source inline("{sm:,md:,lg:,xl:,2xl:,}p{,-x,-y,-t,-r,-b,-l}-{0..10}");
+@source inline("{sm:,md:,lg:,xl:,2xl:,}m{,-x,-y,-t,-r,-b,-l}-{0..10}");
+
+/* Sizing */
+@source inline("{sm:,md:,lg:,xl:,2xl:,}w-{0,1,2,4,8,16,32,1/2,full}");
+@source inline("{sm:,md:,lg:,xl:,2xl:,}h-{0,1,2,4,8,16,32,1/2,full}");
+@source inline("{sm:,md:,lg:,xl:,2xl:,}min-w-{0,full}");
+@source inline("{sm:,md:,lg:,xl:,2xl:,}max-w-{xs,sm,md,lg,xl,2xl,full}");
+@source inline("{sm:,md:,lg:,xl:,2xl:,}min-h-{0,full}");
+@source inline("{sm:,md:,lg:,xl:,2xl:,}max-h-{full,screen}");
+
+/* Grid */
+@source inline("{sm:,md:,lg:,xl:,2xl:,}grid-cols-{1..12}");
+@source inline("{sm:,md:,lg:,xl:,2xl:,}col-span-{1..12}");
+@source inline("{sm:,md:,lg:,xl:,2xl:,}row-span-{1..6}");
+
+/* Flex growth/shrink */
+@source inline("{sm:,md:,lg:,xl:,2xl:,}flex-{1,auto,initial}");
+@source inline("{sm:,md:,lg:,xl:,2xl:,}{grow,shrink}{,-0}");
+
+/* Alignment and self-placement */
+@source inline("{sm:,md:,lg:,xl:,2xl:,}self-{auto,start,center,end,stretch}");
+@source inline("{sm:,md:,lg:,xl:,2xl:,}place-{items,content}-{start,center,end,between,around,evenly,stretch}");
+@source inline("{sm:,md:,lg:,xl:,2xl:,}justify-self-{auto,start,center,end,stretch}");
+@source inline("{sm:,md:,lg:,xl:,2xl:,}align-self-{auto,start,center,end,stretch}");
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
