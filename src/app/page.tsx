@@ -38,7 +38,6 @@ export default function LowStockProductsTable() {
 function Chat() {
 
   const registryContext = useRegistryContext();
-
   const {
     messages,
     input,
@@ -47,7 +46,7 @@ function Chat() {
   } = useChat({
     api: '/api/generative-dashboard',
     body: {
-      customComponentPrompt: getCustomComponentsPrompt(registryContext),
+      ...getCustomComponentsPrompt(registryContext),
     }
   });
 

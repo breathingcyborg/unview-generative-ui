@@ -88,6 +88,7 @@ export function MarkdownRenderer({ markdown }: { markdown: string }) {
           if (section.partial_mdx) {
             return <MDXLoading key={i}/>
           }
+          console.debug('rendering', stripMdxTags(section.content));
           return <MDXSection className="my-3" key={i} code={stripMdxTags(section.content)} />
         }
         return null;

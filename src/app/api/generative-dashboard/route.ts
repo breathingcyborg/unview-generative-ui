@@ -13,7 +13,7 @@ export const maxDuration = 10 * 60;
 
 export async function POST(req: Request) {
 
-  const { messages, customComponentPrompt }: { messages: UIMessage[], customComponentPrompt: string } = await req.json();
+  const { messages, hooksPrompt, componentsPrompt }: { messages: UIMessage[], hooksPrompt: string, componentsPrompt: string } = await req.json();
 
   const model = getUiGenerationLLM();
 
@@ -23,7 +23,7 @@ export async function POST(req: Request) {
 
   const result = streamText({
     model: model,
-    system: getUiGeneratorPrompt(customComponentPrompt),
+    system: getUiGeneratorPrompt(componentsPrompt, hooksPrompt),
     messages: convertToCoreMessages(messages),
     tools: tools,
     toolCallStreaming: true,
