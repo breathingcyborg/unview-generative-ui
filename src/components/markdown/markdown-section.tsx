@@ -95,7 +95,7 @@ const components: Partial<Components> = {
   },
 };
 
-const NonMemoizedPlainMarkdownSection = ({ children }: { children: string }) => {
+const NonMemoizedMarkdownSection = ({ children }: { children: string }) => {
   return (
     <ReactMarkdown 
       skipHtml={false}
@@ -107,7 +107,7 @@ const NonMemoizedPlainMarkdownSection = ({ children }: { children: string }) => 
   );
 };
 
-export const PlainMarkdownSection = memo(
-  NonMemoizedPlainMarkdownSection,
+export const MarkdownSection = memo(
+  NonMemoizedMarkdownSection,
   (prevProps, nextProps) => prevProps.children === nextProps.children,
 );

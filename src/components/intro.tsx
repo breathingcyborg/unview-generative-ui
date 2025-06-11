@@ -12,10 +12,10 @@ export function Intro({ onSelectPrompt } : { onSelectPrompt: (prompt: string) =>
                     Get focused, distraction-free screens tailored for you. And save developers countless hours building forms and tables.
                 </p>
                 <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0 justify-center">
-                    <Button className="rounded-full cursor-pointer" size="lg" variant="outline" onClick={() => onSelectPrompt("I manage inventory, create a ui for me")}>
+                    <Button className="rounded-full cursor-pointer" size="lg" variant="outline" onClick={() => onSelectPrompt("I manage inventory, create a ui for me, use charts if possible")}>
                         📦 Inventory Manager
                     </Button>
-                    <Button className="rounded-full cursor-pointer" size="lg" variant="outline" onClick={() => onSelectPrompt("I manage sales, create a ui for me")}>
+                    <Button className="rounded-full cursor-pointer" size="lg" variant="outline" onClick={() => onSelectPrompt("I manage sales, create a ui for me, use charts if possible")}>
                         💰 Sales Manager
                     </Button>
                     <Button className="rounded-full cursor-pointer" size="lg" variant="outline" onClick={() => onSelectPrompt("I manage dispatch, create a ui for me")}>

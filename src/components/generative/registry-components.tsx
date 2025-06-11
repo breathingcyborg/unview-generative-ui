@@ -6,6 +6,7 @@ import { KeyValueDisplayComponentRegistry } from './key-value-display';
 import { CardComponentRegistry } from './card';
 import { SimpleListComponentRegistry } from './simple-list';
 import { StatsCardComponentRegistry } from './stats-card';
+import { GenericBarChartComponentRegistry } from './bar-chart';
 
 // This structure matches the user's example for the registry context
 export const registeredUiComponents: RegistryContextType['components'] = {
@@ -14,6 +15,7 @@ export const registeredUiComponents: RegistryContextType['components'] = {
   'CardComponent': CardComponentRegistry,
   'SimpleListComponent': SimpleListComponentRegistry,
   'StatsCardComponent': StatsCardComponentRegistry,
+  'GenericBarChartComponent': GenericBarChartComponentRegistry
 };
 
 // If you also have hooks:

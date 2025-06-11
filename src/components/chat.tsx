@@ -3,7 +3,7 @@
 import { useChat } from "@ai-sdk/react";
 import { useRegistryContext } from "./generative/registry";
 import { getCustomComponentsPrompt } from "./generative/registry-prompt";
-import { MarkdownRenderer } from "./markdown/markdown-renderer";
+import { TextSection } from "./markdown/text-section";
 import { ToolCall } from "./tool-call";
 import { Input } from "./ui/input";
 import { UIMessage } from "ai";
@@ -68,7 +68,7 @@ function Message({ message } : { message: UIMessage }) {
       switch (part.type) {
         case 'text':
           return <div key={`${message.id}-${i}`}>
-            <MarkdownRenderer markdown={part.text} />
+            <TextSection text={part.text} />
           </div>;
         case 'tool-invocation':
           return (

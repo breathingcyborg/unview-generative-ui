@@ -164,7 +164,7 @@ Because llm generated ui could use these.
 }
 
 @utility chat-container {
-  @apply w-full sm:max-w-[640px] px-4
+  @apply w-full sm:max-w-[640px] md:max-w-[768px] lg:max-w-[1024px] px-4
 }
 
 @layer components {
