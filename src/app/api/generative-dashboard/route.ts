@@ -28,6 +28,7 @@ export async function POST(req: Request) {
     tools: tools,
     toolCallStreaming: true,
     maxSteps: 100,
+    temperature: 0,
     onError: (event) => {
       console.error(event.error);
       console.error((event.error as any).requestBodyValues)

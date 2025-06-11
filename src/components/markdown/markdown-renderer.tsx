@@ -4,6 +4,7 @@ import { useRegistryContext } from "@/components/generative/registry";
 import { useMemo } from "react";
 import { PlainMarkdownSection } from "./plain-markdown-section";
 import { MDXLoading } from "../mdx-loading";
+import { LoadingCard } from "../loading-card";
 
 /**
  * Splits content into markdown and mdx sections and renders them.
@@ -79,21 +80,23 @@ export function MarkdownRenderer({ markdown }: { markdown: string }) {
   // divide it into sections - each section is either markdown or mdx
   return <div className="whitespace-pre-wrap">
     <MDXProvider components={mdxComponents}>
-    {
-      sections.map((section, i) => {
-        if (section.type === 'markdown') {
-          return <PlainMarkdownSection key={i}>{section.content}</PlainMarkdownSection>
+      <div className="flex flex-col gap-6">
+        {
+          sections.map((section, i) => {
+            if (section.type === 'markdown') {
+              return <PlainMarkdownSection key={i}>{section.content}</PlainMarkdownSection>
+            }
+            if (section.type === 'mdx') {
+              if (section.partial_mdx) {
+                return <LoadingCard title="Generating UI" key={i} />
+              }
+              console.debug('rendering', stripMdxTags(section.content));
+              return <MDXSection key={i} code={stripMdxTags(section.content)} />
+            }
+            return null;
+          })
         }
-        if (section.type === 'mdx') {
-          if (section.partial_mdx) {
-            return <MDXLoading key={i}/>
-          }
-          console.debug('rendering', stripMdxTags(section.content));
-          return <MDXSection className="my-3" key={i} code={stripMdxTags(section.content)} />
-        }
-        return null;
-      })
-    }
+      </div>
     </MDXProvider>
   </div>
 }
