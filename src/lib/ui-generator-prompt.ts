@@ -49,9 +49,9 @@ export function getUiGeneratorPrompt(componentsPrompt: string, hooksPrompt: stri
 
 # Tailwind CSS Rules
 1. USE Tailwind for layout (e.g., p-4, mb-4), when needed
-2. ONLY USE grid, flex, margin, padding from tailwind.
+2. ONLY USE grid, flex, margin, padding, gap, space from tailwind.
 3. DONT USE tailwind classes other than ones mentioned in 2
-4. Ensure there is sufficient space between elements
+4. Ensure there is sufficient space between elements, both horizontally and vertically
 
 # Available Components
 ${componentsPrompt}

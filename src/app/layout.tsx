@@ -27,7 +27,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}
       >
-        <div className="w-full bg-card fixed top-0 left-0 right-0">
+        <div className="z-10 w-full bg-card fixed top-0 left-0 right-0">
           <div className="chat-container mx-auto">
             <div className="p-4 text-center">
             📊 Personalized Admin UI - POC
